@@ -130,37 +130,41 @@ const App = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const PromoBanner = () => (
-    <div className="mt-12 text-center animate-in fade-in duration-700">
-      <p className="text-green-800 font-medium mb-4 flex items-center justify-center gap-2">
-        <Sparkles className="w-5 h-5 text-yellow-500" />
-        特別なお知らせ
-        <Sparkles className="w-5 h-5 text-yellow-500" />
+const PromoBanner = () => (
+  <div className="mt-12 text-center animate-in fade-in duration-700">
+    <p className="text-green-800 font-medium mb-4 flex items-center justify-center gap-2">
+      <Sparkles className="w-5 h-5 text-yellow-500" />
+      特別なお知らせ
+      <Sparkles className="w-5 h-5 text-yellow-500" />
+    </p>
+
+    <div className="bg-gradient-to-r from-green-900 to-green-950 rounded-2xl p-8 border border-green-700 text-white flex flex-col items-center shadow-lg">
+      <div className="mb-3 text-yellow-400">
+        <Sparkles className="w-8 h-8" />
+      </div>
+
+      <h3 className="text-xl font-serif mb-3 text-yellow-50">
+        このアプリはAIを使って作成しています
+      </h3>
+
+      <p className="text-green-100 text-sm mb-6 leading-relaxed">
+        あなたもご自身のアイデアを
+        AIでこんな風に形にしてみませんか？<br />
+        興味のある方は公式LINEからお気軽にご連絡ください
       </p>
+
       <a
         href="https://lin.ee/3hg9NDN"
         target="_blank"
         rel="noopener noreferrer"
-        className="block relative group overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+        className="bg-yellow-500 text-green-950 px-6 py-3 rounded-full font-bold text-sm inline-flex items-center gap-2 hover:opacity-90 transition"
       >
-        <img
-          src={BANNER_URL}
-          alt="あなただけのオリジナルAIを作ってみませんか？"
-          className="w-full h-auto object-cover"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.parentElement.innerHTML = `
-              <div class="bg-gradient-to-r from-green-900 to-green-950 rounded-2xl p-8 border border-green-700 text-white flex flex-col items-center">
-                <div class="mb-3 text-yellow-400">★</div>
-                <h3 class="text-xl font-serif mb-2 text-yellow-50">あなただけのオリジナルAIを作ってみませんか？</h3>
-                <p class="text-green-100 text-sm mb-4 leading-relaxed">実は、このワークアプリはAIを使って作成されています。<br/>あなたもご自身のアイデアを、こんな風に形にしてみませんか？<br/>興味がある方は、公式LINEからお気軽にご連絡ください。</p>
-                <div class="bg-yellow-500 text-green-950 px-6 py-2 rounded-full font-bold text-sm">公式LINEはこちら</div>
-              </div>`;
-          }}
-        />
+        公式LINEはこちら
+        <ChevronRight className="w-4 h-4" />
       </a>
     </div>
-  );
+  </div>
+);
 
   return (
     <div className="min-h-screen bg-green-50 text-green-900 font-serif selection:bg-green-200">
